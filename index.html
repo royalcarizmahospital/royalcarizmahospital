@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carizma Royal Hospital - Quality Healthcare Services</title>
+    <style>
+        :root {
+            --primary: #005b96;
+            --secondary: #0d6efd;
+            --accent: #00a8e8;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --emergency: #dc3545;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hospitalfront.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .cta-button {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #0088c6;
+            transform: translateY(-2px);
+        }
+        .services {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        .department-showcase {
+            padding: 3rem 1rem;
+            background-color: #f0f8ff;
+        }
+        .department {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+        .department:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .department-img {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .department-content {
+            flex: 1;
+        }
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .contact-info {
+            margin-bottom: 1.5rem;
+        }
+        .emergency-banner {
+            background-color: var(--emergency);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .emergency-number {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .emergency-icon {
+            font-size: 1.5rem;
+        }
+        .quick-contact {
+            background-color: var(--primary);
+            padding: 2rem;
+            text-align: center;
+            color: white;
+        }
+        .quick-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Carizma Royal Hospital</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="emergency-banner">
+        <div class="emergency-number">
+            <span class="emergency-icon">🆘</span>
+            <span>Emergency Hotline: +1 587-580-4002</span>
+        </div>
+        <div class="emergency-number">
+            <span class="emergency-icon">📞</span>
+            <span>Main Contact: +1 587-580-4003</span>
+        </div>
+    </div>
+
+    <section id="home" class="hero">
+        <h1>Exceptional Care for All</h1>
+        <p>Your health is our priority. Experience world-class healthcare services.</p>
+        <button class="cta-button">Book an Appointment</button>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <!-- Replace with image: emergency-room.jpg -->
+                <img src="images/emergencyroom.jpg" alt="Emergency Room" class="service-img">
+                <h3>Emergency Care</h3>
+                <p>24/7 emergency services with state-of-the-art facilities and expert staff.</p>
+            </div>
+            <div class="service-card">
+                <!-- Replace with image: surgery.jpg -->
+                <img src="images/surgery.jpg" alt="Surgery" class="service-img">
+                <h3>General Surgery</h3>
+                <p>Comprehensive surgical services performed by experienced surgeons.</p>
+            </div>
+            <div class="service-card">
+                <!-- Replace with image: maternity.jpg -->
+                <img src="images/mat.jpg" alt="Maternity Care" class="service-img">
+                <h3>Maternity Care</h3>
+                <p>Specialized care for mothers and newborns in a comfortable environment.</p>
+            </div>
+            <div class="service-card">
+                <!-- Replace with image: cardiology.jpg -->
+                <img src="images/card.jpg" alt="Cardiology" class="service-img">
+                <h3>Cardiology</h3>
+                <p>Advanced cardiac care and diagnostic services for heart health.</p>
+            </div>
+            <div class="service-card">
+                <!-- Replace with image: pediatrics.jpg -->
+                <img src="images/ped.jpg" alt="Pediatrics" class="service-img">
+                <h3>Pediatrics</h3>
+                <p>Compassionate care tailored specifically for children and adolescents.</p>
+            </div>
+            <div class="service-card">
+                <!-- Replace with image: imaging.jpg -->
+                <img src="images/dia.jpg" alt="Diagnostic Imaging" class="service-img">
+                <h3>Diagnostic Imaging</h3>
+                <p>Advanced imaging technology for accurate diagnosis and treatment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="department-showcase">
+        <div class="department">
+            <!-- Replace with image: modern-equipment.jpg -->
+            <img src="images/me.jpg" alt="Modern Medical Equipment" class="department-img">
+            <div class="department-content">
+                <h2>State-of-the-Art Facilities</h2>
+                <p>Our hospital is equipped with the latest medical technology to ensure accurate diagnoses and effective treatments. From advanced imaging systems to robotic surgical equipment, we invest in the best tools for your care.</p>
+            </div>
+        </div>
+        <div class="department">
+            <!-- Replace with image: expert-staff.jpg -->
+            <img src="images/es.jpg" alt="Expert Medical Staff" class="department-img">
+            <div class="department-content">
+                <h2>Expert Medical Professionals</h2>
+                <p>Our team of board-certified physicians, nurses, and specialists are dedicated to providing compassionate, personalized care. With years of experience and ongoing training, our staff delivers excellence in every interaction.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Hospital Gallery</h2>
+        <p>Take a virtual tour of our facilities and environment</p>
+        <div class="gallery-grid">
+            <!-- Replace these with actual hospital images -->
+            <img src="images/hr.jpg" alt="Hospital Reception" class="gallery-img">
+            <img src="images/patientroom.jpg" alt="Patient Room" class="gallery-img">
+            <img src="images/lab.jpg" alt="Laboratory" class="gallery-img">
+            <img src="images/waiting.jpg" alt="Waiting Area" class="gallery-img">
+            <img src="images/cafe.jpg" alt="Cafeteria" class="gallery-img">
+            <img src="images/outdoor.jpg" alt="Outdoor Space" class="gallery-img">
+        </div>
+    </section>
+
+    <section class="quick-contact">
+        <h2>Quick Contact</h2>
+        <div class="quick-contact-grid">
+            <div>
+                <h3>Emergency</h3>
+                <p>+1 587-580-4002</p>
+                <p>Available 24/7</p>
+            </div>
+            <div>
+                <h3>Main Contact</h3>
+                <p>+1 587-580-4003</p>
+                <p>Mon-Fri: 8am-8pm</p>
+            </div>
+            <div>
+                <h3>Email</h3>
+                <p><a href="mailto:Royalcarizmahospital@hotmail.com" style="color: white;">Royalcarizmahospital@hotmail.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="contact-info">
+            <h3>Carizma Royal Hospital</h3>
+            <p>Phone: +1 587-580-4003</p>
+            <p>Emergency: ++1 587-580-4002</p>
+            <p>Email: <a href="mailto:Royalcarizmahospital@hotmail.com" style="color: var(--accent);">Royalcarizmahospital@hotmail.com</a></p>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Carizma Royal Hospital. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
